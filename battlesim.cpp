@@ -7,14 +7,17 @@ class creature
 {
     private:
         int health ;
+        int originalhealth ;
         int  maxdamage;
         string name ;
+
     public:
         creature(int health,int maxdamage,string name)
         {
             this->health = health;
             this->maxdamage = maxdamage;
             this->name = name;
+            this->originalhealth = health;
         }
 
         void takedamage(int damage_taken)
@@ -35,9 +38,20 @@ class creature
                 cout << "he cant give damage, hes dead" << endl;
                 return 0;
             }
-            
-
-            return this->maxdamage;
+            if(health > (3/4 * originalhealth))
+            {
+                return maxdamage;
+            }
+            else if(health > (1/2 * originalhealth))
+            {
+                return 3/4 * maxdamage;
+            }
+            else if(health > (1/4 * originalhealth))
+            {
+                return 1/2 * maxdamage;
+            }  
+            else
+                return 1/4 * maxdamage;  
         }
         void showstats()
         {
@@ -49,13 +63,15 @@ class creature
 };
 int main()
 {
-    creature x(1000,50,"monster");
-    creature y(40,50,"zombie");
+    creature x(100,50,"monster");
+    creature y(150,50,"zombie");
 
     x.showstats();
     y.showstats();
 
+    
     x.takedamage(y.givedamage());
+    y.takedamage(x.givedamage());
     y.takedamage(x.givedamage());
     x.takedamage(y.givedamage());
 
