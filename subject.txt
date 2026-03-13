@@ -1,0 +1,30 @@
+C++ Project Assignment: Creature Battle Simulator
+
+Objective
+Create a console-based battle game in C++ where two creatures fight until one loses all health points. The
+project must demonstrate understanding of classes, loops, conditions, functions, user input, and basic
+game logic.
+Project Requirements
+
+• Creature Class: Create a class named Creature containing at least name, health, and attack. Include
+methods such as takeDamage() and showStatus(). Health must never go below 0.
+• Battle System: Simulate a fight between two creatures (for example Dragon vs Knight or Robot vs
+Alien). The battle ends when one creature's health reaches 0.
+• Game Loop: Use a loop that keeps the battle running until a winner is determined.
+• Player Interaction: Provide a menu where the player chooses actions such as Attack, Special Attack,
+or Heal.
+• Random Damage: Attacks must deal random damage so each turn is different.
+• Game Output: Clearly display attack results, damage dealt, and remaining health.
+Project Assessment (100 Points)
+
+• Program Structure (20 pts): Correct use of classes and methods.
+• Game Loop Logic (20 pts): A proper loop that continues until one creature dies.
+• Player Interaction (15 pts): Menu system and input handling.
+• Creature Interaction (15 pts): Creatures interact through functions or methods.
+• Random Damage (10 pts): Damage values vary using randomness.
+• Output Clarity (10 pts): Clear messages showing attacks and health updates.
+• Code Quality (10 pts): Clean formatting, meaningful variable names, and readable structure.
+Bonus (+10 Points)
+
+Extra credit may be awarded for additional features such as special attacks, healing abilities, multiple
+creatures, critical hits, or a more advanced turn system.
