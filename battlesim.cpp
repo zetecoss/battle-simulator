@@ -38,24 +38,28 @@ class creature
                 cout << "he cant give damage, hes dead" << endl;
                 return 0;
             }
-            if(health > (3/4 * originalhealth))
+            if(health > (0.75 * originalhealth))
             {
                 return maxdamage;
             }
-            else if(health > (1/2 * originalhealth))
+            else if(health > (0.5 * originalhealth))
             {
-                return 3/4 * maxdamage;
+                return 0.75 * maxdamage;
             }
-            else if(health > (1/4 * originalhealth))
+            else if(health > (0.25 * originalhealth))
             {
-                return 1/2 * maxdamage;
+                return 0.5 * maxdamage;
             }  
             else
-                return 1/4 * maxdamage;  
+                return 0.25 * maxdamage;  
         }
         void showstats()
         {
             cout << this->name << " health:  " << this->health  << endl;
+        }
+        int health_getter()
+        {
+            return this->health;
         }
 
 
@@ -63,20 +67,39 @@ class creature
 };
 int main()
 {
-    creature x(100,50,"monster");
+    cout << " welcome , give use ur name" << endl;
+    string name ;
+
+    cin >> name;
+
+    creature x(100,50,name);
+    
     creature y(150,50,"zombie");
 
-    x.showstats();
-    y.showstats();
+    string str = "";
 
+    cout << "player Menu" << endl;
     
-    x.takedamage(y.givedamage());
-    y.takedamage(x.givedamage());
-    y.takedamage(x.givedamage());
-    x.takedamage(y.givedamage());
+    cout << " choose : attack 1 , heal 2 ,quit 3" << endl;
 
-    x.showstats();
-    y.showstats();
+    //cin >> str;
+
+
+
+    while(1)
+    {
+        x.takedamage(y.givedamage());
+        y.takedamage(x.givedamage());
+        if( x.health_getter() == 0 || y.health_getter() == 0)
+        {
+            break;
+        }
+
+
+    }
+    
+
+
 
     return 0;
 }
